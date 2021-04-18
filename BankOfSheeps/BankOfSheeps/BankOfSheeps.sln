@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31025.218
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankOfSheeps", "BankOfSheeps\BankOfSheeps.csproj", "{F2B911F1-CE57-4B61-939A-6601CDFCFE5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankOfSheeps", "BankOfSheeps\BankOfSheeps.csproj", "{F2B911F1-CE57-4B61-939A-6601CDFCFE5C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BankOfSheepsAPI", "BankOfSheepsAPI\BankOfSheepsAPI.csproj", "{78DD4BF5-7CBB-4F12-B61E-3C5ECEBF129C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F2B911F1-CE57-4B61-939A-6601CDFCFE5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2B911F1-CE57-4B61-939A-6601CDFCFE5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2B911F1-CE57-4B61-939A-6601CDFCFE5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78DD4BF5-7CBB-4F12-B61E-3C5ECEBF129C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78DD4BF5-7CBB-4F12-B61E-3C5ECEBF129C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78DD4BF5-7CBB-4F12-B61E-3C5ECEBF129C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78DD4BF5-7CBB-4F12-B61E-3C5ECEBF129C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
