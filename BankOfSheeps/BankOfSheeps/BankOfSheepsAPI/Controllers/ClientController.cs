@@ -33,5 +33,13 @@ namespace BankOfSheepsAPI.Controllers
             var data = Data.LoadFromXML(@"C:\PROJECTS\IctPro\CNET2-urza-git\BankOfSheeps\BankOfSheeps\BankOfSheeps\dataset.xml");
             return data.Where(x => x.IsActive).ToList();
         }
+
+        [HttpGet]
+        [Route("suspended")]
+        public IEnumerable<Client> GetSuspended()
+        {
+            var data = Data.LoadFromXML(@"C:\PROJECTS\IctPro\CNET2-urza-git\BankOfSheeps\BankOfSheeps\BankOfSheeps\dataset.xml");
+            return data.Where(x => !x.IsActive).ToList();
+        }
     }
 }
