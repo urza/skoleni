@@ -10,15 +10,15 @@ namespace BankOfSheeps
             Console.WriteLine("Bank of Sheeps!");
 
             Console.WriteLine("Načítám data..");
-            List<Client> data = Data.GeneratePersons();
-            Data.GenerateToXML();
-            Console.WriteLine($"Hotovo. Celkem {data.Count} osob.");
+            List<Client> data = Data.LoadFromXML();
+         
+            Console.WriteLine($"Načteno celkem {data.Count} osob.");
 
-            Console.WriteLine(Statistics.WhoHasMaxGlucose(data).Name);
+            Console.WriteLine(Statistics.ClientWithMaxDeposit(data).Name);
 
-            foreach (var person in Statistics.PersonsByMaxDeposit(data))
+            foreach (var client in Statistics.ClientsByMaxDeposit(data))
             {
-                Console.WriteLine(person.Name + "    " + person.Glucose);
+                Console.WriteLine(client.Name + "    " + client.DepositValue);
             }
         }
     }
