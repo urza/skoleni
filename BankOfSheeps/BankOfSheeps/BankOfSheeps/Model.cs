@@ -19,8 +19,9 @@ namespace BankOfSheeps
 		public Address Address { get; set; }
 
 		public List<Transaction> Transactions { get; set; }
+        public string Email { get;  set; }
 
-		public string FullName()
+        public string FullName()
 		{
 			return FirstName + " " + LastName;
 		}

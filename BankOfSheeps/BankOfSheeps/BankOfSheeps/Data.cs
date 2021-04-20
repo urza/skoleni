@@ -52,6 +52,7 @@ namespace BankOfSheeps
 					Transactions = new List<Transaction>()
 
 				};
+				person.Email = person.FirstName + "." + person.LastName + person.DateOfBirth.Year + "@example.com";
 				var person2 = new Client()
 				{
 					Address = new Address() { City = cities.OrderBy(x => rnd.Next()).First(), Street = streets.OrderBy(x => rnd.Next()).First() },
@@ -61,6 +62,8 @@ namespace BankOfSheeps
 					IsActive = rnd.NextDouble() > 0.2,
 					Transactions = new List<Transaction>()
 				};
+				person2.Email = person2.FirstName + "." + person2.LastName + person2.DateOfBirth.Year + "@example.com";
+
 
 				data.Add(person);
 				data.Add(person2);

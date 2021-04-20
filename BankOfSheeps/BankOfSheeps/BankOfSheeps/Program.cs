@@ -9,6 +9,8 @@ namespace BankOfSheeps
         {
             Console.WriteLine("Bank of Sheeps!");
 
+            Data.GenerateToXML();
+
             Console.WriteLine("Načítám data..");
             List<Client> data = Data.LoadFromXML();
          
