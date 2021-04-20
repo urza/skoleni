@@ -53,7 +53,7 @@ namespace BankOfSheeps
 					Transactions = new List<Transaction>()
 
 				};
-				person.Email = person.FirstName.RemoveDiacritics() + "." + person.LastName.RemoveDiacritics() + person.DateOfBirth.Year + "@example.com";
+				person.Email = person.FirstName.RemoveDiacritics() + "." + person.LastName.RemoveDiacritics() + "." + person.DateOfBirth.Year + "@example.com";
 				var person2 = new Client()
 				{
 					Address = new Address() { City = cities.OrderBy(x => rnd.Next()).First(), Street = streets.OrderBy(x => rnd.Next()).First() },
@@ -63,7 +63,7 @@ namespace BankOfSheeps
 					IsActive = rnd.NextDouble() > 0.2,
 					Transactions = new List<Transaction>()
 				};
-				person2.Email = person2.FirstName.RemoveDiacritics() + "." + person2.LastName.RemoveDiacritics() + person2.DateOfBirth.Year + "@example.com";
+				person2.Email = person2.FirstName.RemoveDiacritics() + "." + person2.LastName.RemoveDiacritics() + "." + person2.DateOfBirth.Year + "@example.com";
 
 
 				data.Add(person);
