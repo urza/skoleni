@@ -1,0 +1,19 @@
+As a rule of thumb, every time there is a for or for-each loop in your code that does
+something with a collection, without performing a side effect outside the loop, con-
+sider transforming the loop into a LINQ. Then benchmark the execution and evaluate
+whether the query could be a fit to run in parallel using PLINQ.
+
+
+public static Dictionary<string, int> WordsCounter(string source)
+{
+var wordsCount =
+(from filePath in
+	Directory.GetFiles(source, "*.txt")
+		.AsParallel()
+			from line in File.ReadLines(filePath)
+			from word in line.Split(' ')
+			select word.ToUpper())
+		.GroupBy(w => w)
+		.OrderByDescending(v => v.Count()).Take(10);
+	return wordsCount.ToDictionary(k => k.Key, v => v.Count());
+}
