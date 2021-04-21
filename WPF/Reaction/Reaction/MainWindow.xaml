@@ -1,0 +1,16 @@
+﻿<Window x:Class="Reaction.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Reaction"
+        mc:Ignorable="d"
+        FontSize="30"
+        Title="React time" Height="400" Width="400" KeyDown="Window_KeyDown" ResizeMode="CanMinimize">
+    <Grid>
+        <Rectangle x:Name="rectangle" Fill="#FF84CD2E" />
+        <TextBlock x:Name="txtInfo" Text="Press spacebar when ready." FontSize="22" HorizontalAlignment="Center" />
+        <TextBlock Visibility="Hidden" x:Name="txtLetter" Text="A" FontSize="300" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        <TextBlock x:Name="txtElapsed" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10" />
+    </Grid>
+</Window>
