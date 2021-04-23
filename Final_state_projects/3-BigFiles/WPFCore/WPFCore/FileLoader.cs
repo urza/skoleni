@@ -37,5 +37,35 @@ namespace WPFCore
 
             return result;
         }
+
+        public static IEnumerable<string> LoadAllFilesWithProgress(CancellationToken cancelToken, IProgress<string> progress)
+        {
+            string dir = @"C:\PROJECTS\IctPro\CNET2-STUDENTI-GIT\3-BigFiles\data";
+            DirectoryInfo di = new DirectoryInfo(dir);
+            var files = di.EnumerateFiles("*.txt");
+
+            List<string> result = new List<string>();
+
+            foreach (var file in files)
+            {
+                System.IO.StreamReader open = new System.IO.StreamReader(file.FullName);
+                progress.Report(file.Name);
+
+                string word;
+                Task.Delay(500).Wait();
+
+                while ((word = open.ReadLine()) != null)
+                {
+                    if (cancelToken.IsCancellationRequested)
+                    {
+                        return result;
+                    }
+                    result.Add(word);
+                    //progress.Report(result.Count());
+                }
+            }
+
+            return result;
+        }
     }
 }

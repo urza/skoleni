@@ -365,6 +365,22 @@ namespace WPFCore
 
         }
 
+        private void btnStartTaskWithProgress_Click(object sender, RoutedEventArgs e)
+        {
+            IProgress<string> progress = new Progress<string>(message =>
+            {
+                txbResultsInfo.Text = message;
+            });
+
+            tokenSource2 = new CancellationTokenSource();
+            CancellationToken ct = tokenSource2.Token;
+
+            var task = Task.Run(() => FileLoader.LoadAllFilesWithProgress(ct, progress), tokenSource2.Token); // Pass same token to Task.Run.
+
+            task.ContinueWith(task => App.Current.Dispatcher.Invoke(() => txbResultsInfo.Text = (tokenSource2.IsCancellationRequested ? "Canceled " : "") +  task.Result.Count().ToString()));
+
+        }
+
         private void btnCancelTask_Click(object sender, RoutedEventArgs e)
         {
             tokenSource2.Cancel();
