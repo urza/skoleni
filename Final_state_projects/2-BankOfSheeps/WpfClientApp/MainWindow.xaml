@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfClientApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfClientApp"
+        mc:Ignorable="d"
+        Title="Login" Height="450" Width="300" Background="#FF7391B4">
+
+    <Grid>
+        <TextBlock Text="Přihlašte se prosím" Margin="10,84,10,286" FontSize="24" HorizontalAlignment="Center" />
+        <Button Name="btnLogin" Content="Login" Margin="46,201,46,154" FontSize="18" Click="btnLogin_Click"/>
+        <TextBox Text="Jakub.Novotny.1972@example.com" x:Name="txtEmail" HorizontalAlignment="Left" Height="34" Margin="46,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="46,123,0,0" VerticalAlignment="Top" Width="200"/>
+    </Grid>
+
+</Window>

@@ -1,0 +1,20 @@
+﻿<Window x:Class="WPFCore.TasksWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCore"
+        mc:Ignorable="d"
+        Title="TasksWindow" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="btnWebLoad" FontSize="25" Content="Hledej" HorizontalAlignment="Left" Margin="29,25,0,0" VerticalAlignment="Top" Height="40" Width="130" Click="btnWebLoad_Click"/>
+        <TextBox x:Name="txtSearch" FontSize="25" HorizontalAlignment="Left" Margin="185,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="215" Height="40"/>
+        <TextBlock x:Name="txbInfo" HorizontalAlignment="Left" Margin="633,25,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="157"/>
+        <Button x:Name="btnApiFirst" Click="btnApiFirst_Click" FontSize="25" Content="API" HorizontalAlignment="Left" Margin="541,25,0,0" VerticalAlignment="Top" Height="40" Width="87"/>
+        <Button x:Name="btnSearchBinding" Content="Hledej postupně" HorizontalAlignment="Left" Margin="414,25,0,0" VerticalAlignment="Top" Height="40" Width="112" Click="btnSearchBinding_Click"/>
+
+        <DataGrid x:Name="dgResults" Visibility="Hidden" Margin="0,80,0,0" IsReadOnly="True" />
+        <DataGrid x:Name="dgResultsBinding" ItemsSource="{Binding WebSearchResults}" Margin="0,80,0,0" IsReadOnly="True" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,45 @@
+﻿<Window x:Class="WPFCore.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFCore"
+        mc:Ignorable="d"
+        Title="BigFiles" Height="1000" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Button Visibility="Collapsed" x:Name="btnLoadFiles" Click="btnLoadFiles_Click" Content="Načti soubory.." Width="250" FontSize="25" Margin="5" />
+            <Button x:Name="btnWordStats" Content="Nejčastější slova v souboru.." Width="350" FontSize="25" Margin="5" Click="btnWordStats_Click" />
+            <Button x:Name="btnWordStatsGlobal" Content="Nejčastější slova celkem.." Width="350" FontSize="25" Margin="5" Click="btnWordStatsGlobal_Click"  />
+            <Button x:Name="btnStartTask" Content="Start" FontSize="25" Margin="5" Width="100" Click="btnStartTask_Click" />
+            <Button x:Name="btnCancelTask" Content="Cancel" FontSize="25" Margin="5" Width="100" Click="btnCancelTask_Click" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Button x:Name="btnWordStatsParallel" Content="P - Nejčastější slova v souboru.." Width="350" FontSize="25" Margin="5" Click="btnWordStatsParallel_Click"  />
+            <Button x:Name="btnWordStatsParallelInTask" Content="T(P) - Nejčastější slova v souboru.." Width="350" FontSize="25" Margin="5" Click="btnWordStatsParallelInTask_Click"  />
+            <Button x:Name="btnWordStatsGlobalParallel" Content="P - Nejčastější slova celkem.." Width="350" FontSize="25" Margin="5" Click="btnWordStatsGlobalParallel_Click"   />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" >
+            <Button x:Name="btnWordStatsParallelInTaskContinueWith" Content="T(P).ContinueWith - Nejčastější slova v souboru.." Width="464" FontSize="25" Margin="5" Click="btnWordStatsParallelInTaskContinueWith_Click"  />
+            <Button x:Name="btnWordStatsGlobalParallelTaskProgress" Content="await T(P) IProgress - Nejčastější slova celkem.." Width="494" FontSize="25" Margin="5" Click="btnWordStatsParallelInTaskWithProgress_Click"   />
+        </StackPanel>
+
+        <ScrollViewer Grid.Row="3" Grid.ColumnSpan="2">
+            <TextBlock Name="txbResultsInfo" FontSize="28" Text="results.." />
+        </ScrollViewer>
+        
+    </Grid>
+</Window>
